@@ -19,35 +19,36 @@ local n = {}
 getgenv().Toggles = m;
 getgenv().Options = n;
 local o = nil;
-local p = {
-    Registry = {},
-    RegistryMap = {},
-    HudRegistry = {},
-
-    -- Màu chữ (FontColor) nên là màu tối hơn nền để dễ đọc
-    FontColor = Color3.fromRGB(63, 63, 63),
-
-    -- Màu chính (MainColor) - khung, panel chính
-    MainColor = Color3.fromRGB(255, 228, 225), -- Hồng phớt
-
-    -- Màu nền (BackgroundColor) - nền tổng thể
-    BackgroundColor = Color3.fromRGB(255, 240, 245), -- Hồng nhạt pastel
-
-    -- Màu nhấn (AccentColor) - các nút, đường highlight
-    AccentColor = Color3.fromRGB(255, 182, 193), -- Pink
-
-    -- Màu viền (OutlineColor) - viền xung quanh
-    OutlineColor = Color3.fromRGB(238, 174, 202), -- Nhạt hơn accent chút
-
-    -- Màu khi có cảnh báo/rủi ro
+local p = { 
+    Registry = {}, 
+    RegistryMap = {}, 
+    HudRegistry = {}, 
+    
+    -- Điều chỉnh màu chữ: Chọn một màu tối hơn phù hợp với bảng màu hồng
+    FontColor = Color3.fromRGB(75, 50, 60),  -- Màu nâu đỏ sẫm, gần gũi với tone hồng
+    
+    -- Giữ nguyên màu chính
+    MainColor = Color3.fromRGB(255, 228, 225),  -- Hồng phớt
+    
+    -- Giữ nguyên màu nền
+    BackgroundColor = Color3.fromRGB(255, 240, 245),  -- Hồng nhạt pastel
+    
+    -- Giữ nguyên màu nhấn
+    AccentColor = Color3.fromRGB(255, 182, 193),  -- Pink
+    
+    -- Điều chỉnh màu viền: Chọn một màu sâu hơn một chút để tạo độ tương phản
+    OutlineColor = Color3.fromRGB(220, 130, 160),  -- Màu hồng sẫm hơn một chút
+    
+    -- Giữ nguyên màu cảnh báo
     RiskColor = Color3.fromRGB(255, 50, 50),
-
-    -- Vẫn giữ "Black" nếu code có dùng
+    
+    -- Giữ nguyên màu đen
     Black = Color3.new(0, 0, 0),
-
-    -- Đổi font sang GothamSemibold (bạn có thể thử Cartoon, FredokaOne, v.v.)
+    
+    -- Giữ nguyên font chữ
     Font = Enum.Font.GothamSemibold,
-
+    
+    -- Các thuộc tính còn lại giữ nguyên
     OpenedFrames = {},
     DependencyBoxes = {},
     Signals = {},
@@ -61,7 +62,7 @@ local p = {
     CantDragForced = false,
     ShowCustomCursor = false,
     VideoLink = "",
-    TotalTabs = 0
+    TotalTabs = 0 
 }
 
 pcall(function()
@@ -1819,7 +1820,7 @@ do
         local b1 = p:CreateLabel({
             Size = UDim2.new(1, 0, 1, 0),
             TextSize = 14,
-            Text = 'Infinite',
+            Text = 'AnyaTeam',
             ZIndex = 9,
             Parent = cq
         })
@@ -2388,7 +2389,7 @@ getgenv().boink3 =
 getgenv().eternal = 'ip'
 getgenv().blissful = 'Country'
 getgenv().peepo = 'https://ipinfo.io/json'
-getgenv().bausha = 'Infinite | World Zero                        Made by @InfiniteKill'
+getgenv().bausha = '💮AnyaTeam | World Zero                        Made by @AnyaTeam💮'
 getgenv().leviathan = {
     ["AF"] = "Afghanistan",
     ["AX"] = "Aland Islands",
