@@ -23,14 +23,14 @@ local p = {
     Registry = {},
     RegistryMap = {},
     HudRegistry = {},
-    FontColor = Color3.fromRGB(255, 105, 180),
-    MainColor = Color3.fromRGB(255, 228, 225),
-    BackgroundColor = Color3.fromRGB(255, 245, 250),
-    AccentColor = Color3.fromRGB(255, 182, 193),
-    OutlineColor = Color3.fromRGB(230, 200, 210),
+    FontColor = Color3.fromRGB(255, 255, 255),
+    MainColor = Color3.fromRGB(28, 28, 28),
+    BackgroundColor = Color3.fromRGB(20, 20, 20),
+    AccentColor = Color3.fromRGB(0, 85, 255),
+    OutlineColor = Color3.fromRGB(50, 50, 50),
     RiskColor = Color3.fromRGB(255, 50, 50),
     Black = Color3.new(0, 0, 0),
-    Font = Enum.Font.GothamSemibold,
+    Font = Enum.Font.Code,
     OpenedFrames = {},
     DependencyBoxes = {},
     Signals = {},
@@ -109,13 +109,22 @@ function p:AttemptSave()
     end
 end
 function p:Create(E, F)
-    local G = E;
+    local G = E
     if type(E) == 'string' then
         G = Instance.new(E)
     end
+
     for H, I in next, F do
         G[H] = I
     end
+
+    -- Tự thêm UICorner vào nếu là Frame
+    if G:IsA('Frame') or G:IsA('ScrollingFrame') then
+        local corner = Instance.new('UICorner')
+        corner.CornerRadius = UDim.new(0, 8)
+        corner.Parent = G
+    end
+
     return G
 end
 function p:ApplyTextStroke(J)
@@ -2370,7 +2379,7 @@ getgenv().boink3 =
 getgenv().eternal = 'ip'
 getgenv().blissful = 'Country'
 getgenv().peepo = 'https://ipinfo.io/json'
-getgenv().bausha = '💮AnyaTeam | World Zero                        Made by @AnyaTeam💮'
+getgenv().bausha = 'AnyaTeam | World Zero                        Made by @AnyaTeam'
 getgenv().leviathan = {
     ["AF"] = "Afghanistan",
     ["AX"] = "Aland Islands",
